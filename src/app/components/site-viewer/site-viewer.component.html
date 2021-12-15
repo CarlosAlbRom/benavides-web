@@ -1,0 +1,26 @@
+<section>
+
+  <img [src]="'assets/images/' + data.url" alt="">
+
+  <div>
+    <div>
+      <h4 class="bot-30">Sede {{ data.title }}</h4>
+
+      <p><strong>Dirección:</strong></p>
+
+      <p>{{ data.address }}</p>
+
+      <p><strong>Números:</strong></p>
+
+      <div class="number" *ngFor="let n of data.numbers; let i = index">
+        <p>{{ n }}</p>
+        <a [href]="'https://api.whatsapp.com/send?phone=' + whatsappNumbers[i]" target="_blank">
+          <img  src="assets/images/Icons/whatsapp.svg" alt="">
+        </a>
+      </div>
+    </div>
+
+    <h4>Nuestro departamento <br> de ventas espera por ti</h4>
+  </div>
+
+</section>

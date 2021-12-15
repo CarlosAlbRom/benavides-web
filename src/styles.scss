@@ -1,1 +1,249 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '~@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+// $PinturasBenavides-primary: mat.define-palette(mat.$indigo-palette);
+// $PinturasBenavides-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+// $PinturasBenavides-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+// $PinturasBenavides-theme: mat.define-light-theme((
+//   color: (
+//     primary: $PinturasBenavides-primary,
+//     accent: $PinturasBenavides-accent,
+//     warn: $PinturasBenavides-warn,
+//   )
+// ));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+// @include mat.all-component-themes($PinturasBenavides-theme);
+
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+// @use '~@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+// @include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+// $PinturasBenavides-primary: mat.define-palette(mat.$indigo-palette);
+// $PinturasBenavides-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+// $PinturasBenavides-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+// $PinturasBenavides-theme: mat.define-light-theme((
+//   color: (
+//     primary: $PinturasBenavides-primary,
+//     accent: $PinturasBenavides-accent,
+//     warn: $PinturasBenavides-warn,
+//   )
+// ));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+// @include mat.all-component-themes($PinturasBenavides-theme);
+
 /* You can add global styles to this file, and also import other style files */
+@import './app/common/variables.scss';
+
+@font-face {
+  font-family: Merriweather;
+  src: url("./assets/fonts/Merriweather_Sans/MerriweatherSans-VariableFont_wght.ttf");
+}
+
+@font-face {
+  font-family: Monstserrat;
+  src: url("./assets/fonts/Montserrat/Montserrat-Medium.ttf");
+}
+
+@font-face {
+  font-family: Oswald;
+  src: url("./assets/fonts/Oswald/Oswald-VariableFont_wght.ttf");
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url("./assets/fonts/Roboto/Roboto-Light.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: Roboto-Medium;
+  src: url("./assets/fonts/Roboto/Roboto-Medium.ttf") format("opentype");
+}
+
+.white-divider{
+  height: 5px;
+  width: 30px;
+  background: white;
+  margin: 0 auto 15px;
+}
+
+.light-green-bg{
+  background-color: $light-green;
+  &:active{
+    background-color: #7c9d00;
+  }
+}
+
+.blue-bg{
+  background-color: $blue;
+}
+
+.blue{
+  // color: $blue;
+}
+
+body{
+  margin: 0px;
+  font-family: 'Roboto', sans-serif !important;
+  font: 400 14px / 20px 'Roboto', sans-serif !important;
+  color: #212134;
+}
+
+h1, h2, h3, h4, h5, h6{
+  // font: 400;
+  // font-family: 'Oswald', sans-serif !important;
+  margin: 0 !important;
+}
+
+p{
+  font-size: 12pt;
+}
+
+h1, h2{
+  margin: 0 0 30px;
+}
+
+h2{
+  text-align: center;
+  // color: $blue;
+  font: 600 24pt / 32px 'Oswald', sans-serif !important;
+  margin: 0 0 30px !important;
+  font-weight: 600;
+}
+
+h4{
+  font-size: 12pt;
+}
+
+.grid-2{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.grid-3{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+}
+
+.grid-4{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 30px;
+}
+
+.margin-30{
+  margin: 0 30px;
+}
+
+.margin-45{
+  margin: 0 30px;
+}
+
+.margin-10-percent{
+  margin: 0 5%;
+}
+
+.bot-30{
+  margin-bottom: 30px !important;
+}
+
+.bot-60{
+  margin-bottom: 60px !important;
+}
+
+button{
+  border: 0px;
+  outline: none;
+  border-radius: 15px;
+  padding: 5px 15px;
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+.center{
+  text-align: center;
+}
+
+.page-banner{
+  width: 100%;
+  height: 35vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  img{
+    width: 100%;
+  }
+  div{
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 35vw;
+    // background: linear-gradient(135deg, rgba(163,201,1,0.3), rgba(5,51,112,0.3) 40%);
+  }
+}
+
+html, body { height: 100%; }
+// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@media screen and (max-width: 768px) {
+  .grid-2{
+    grid-template-columns: 1fr;
+  }
+
+  .grid-3, .grid-4{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 468px) {
+
+  .grid-3, .grid-4{
+    grid-template-columns: 1fr;
+  }
+
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

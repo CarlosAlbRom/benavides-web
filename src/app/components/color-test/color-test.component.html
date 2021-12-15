@@ -1,0 +1,34 @@
+
+<div class="test">
+
+  <div>
+    <p class="title" [style.color]="index == 0 ? '#916718' : '#e5be30'">¡Dale Color a tu Vida!</p>
+    <p class="subtitle" [style.color]="index == 0 ? 'black' : 'white'">Color, Calidad y Economía</p>
+    <div>
+      <!-- <div class="circle" [style.background]="'white'" (click)="index = 0"></div>
+      <div class="circle" [style.background]="'green'" (click)="index = 1"></div>
+      <div class="circle" [style.background]="'blue'" (click)="index = 2"></div>
+      <div class="circle" [style.background]="'#383838'" (click)="index = 3"></div> -->
+
+      <img src="assets/images/blanco.png" class="circle" (click)="index = 0" alt="">
+      <img src="assets/images/verde.png" class="circle" (click)="index = 1" alt="">
+      <img src="assets/images/azul.png" class="circle" (click)="index = 2" alt="">
+      <img src="assets/images/gris.png" class="circle" (click)="index = 3" alt="">
+
+    </div>
+  </div>
+
+  <img class="background" [src]="'assets/images/wall/colores de pared-' + color[index] + '.jpg'" alt="">
+
+  <!-- <img [src]="'assets/images/wall/colores de pared-verde.jpg'" alt="" *ngIf="color == 1">
+
+  <img [src]="'assets/images/wall/colores de pared-azul.jpg'" alt="" *ngIf="color == 2">
+
+  <img [src]="'assets/images/wall/colores de pared-negro.jpg'" alt="" *ngIf="color == 3"> -->
+
+
+</div>
+
+<div class="hidden">
+  <img [src]="'assets/images/wall/colores de pared-' + c + '.jpg'" alt="" *ngFor="let c of color">
+</div>

@@ -1,0 +1,14 @@
+<!-- <div class="article" [style.border]="' 2px solid ' + color"> -->
+<div class="article" [routerLink]="['/detail/' + article.id]">
+  <!-- (n % 1) !== 0 -->
+
+  <div>
+    <img [src]="article.img" [alt]="article.title">
+  </div>
+
+  <div>
+    <h4>{{ article.title }}</h4>
+  </div>
+
+</div>
+

@@ -1,0 +1,51 @@
+@import '../../common/variables.scss';
+
+.article{
+  background: white;
+  width: 100%;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-out;
+  div:nth-child(1){
+    border-radius: 1px;
+    border: 1px solid $light-grey;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 18vw;
+    img{
+      width: 100%;
+      height: 100%;
+      // object-fit: contain;
+    }
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+div:nth-child(2){
+  // padding: 15px;
+  h4{
+    margin: 5px 0 0 !important;
+    cursor: pointer;
+    // text-align: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .article{
+    div:nth-child(1){
+      height: 35vw;
+    }
+  }
+}
+
+@media screen and (max-width: 468px) {
+  .article{
+    div:nth-child(1){
+      height: 70vw;
+    }
+  }
+}

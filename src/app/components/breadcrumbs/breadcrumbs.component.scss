@@ -1,0 +1,20 @@
+strong{
+  margin-right: 30px;
+}
+
+span{
+  color: #898989;
+}
+
+p{
+  margin: 30px 0 !important;
+  cursor: default;
+  .link{
+    &:hover{
+      cursor: pointer;
+    }
+  }
+  .arrow{
+    margin: 0 10px;
+  }
+}

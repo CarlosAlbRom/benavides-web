@@ -1,0 +1,50 @@
+@import '../../common/variables.scss';
+
+section{
+  display: grid;
+  grid-template-columns: 1fr 220px;
+  border-radius: 1px;
+  overflow: hidden;
+  img{
+    max-width: 100%;
+    max-height: 80vh;
+  }
+  > div{
+    background: $dark-grey;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .number{
+      display: grid;
+      grid-template-columns: 1fr 30px;
+      gap: 30px;
+      align-items: center;
+      margin-bottom: 15px;
+      img, a{
+        background: white;
+        border-radius: 50%;
+        height: 30px;
+        width: 30px;
+      }
+      p{
+        margin-bottom: 0px;
+      }
+      &:last-of-type{
+        margin-bottom: 0;
+      }
+    }
+    h4{
+      text-align: center;
+      font-size: 16pt;
+      color: white;
+      &:last-child{
+        color: $light-green;
+        font-size: 12pt;
+      }
+    }
+    p{
+      color: white;
+    }
+  }
+}

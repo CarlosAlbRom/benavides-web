@@ -1,0 +1,131 @@
+<ng-image-slider #nav class="bot-30"
+  [images]="imageObject"
+  [imageSize]="{width:'100%', space: 0, height: '68%'}"
+  [infinite]="true"
+  [autoSlide]="{interval: 5, stopOnHover: false}"
+  [lazyLoading]="true"
+  *ngIf="imageObject"
+  ></ng-image-slider>
+  <!-- [manageImageRatio]="true" -->
+
+
+
+<section class="info bot-60 margin-10-percent">
+  <h1>Pinturas Benavides</h1>
+
+  <!-- <div class="grid-2">
+    <article
+      [article]="{title: '¿Quienes Somos?', img: 'assets/images/descarga2.jpg', size: 18}"
+    ></article>
+    <article
+      [article]="{title: 'Atención al Cliente', img: 'assets/images/customerservice.jpeg', size: 18}"
+    ></article>
+  </div> -->
+
+  <div class="grid-2">
+
+    <div class="redirect"  [routerLink]="['/about']">
+      <img src="assets/images/quienes somos.JPG" alt="">
+      <div class="redirect-title">
+        <h3>¿Quienes Somos?</h3>
+      </div>
+    </div>
+
+    <div class="redirect">
+      <img src="assets/images/Departamentos.jpg" alt="">
+      <div class="redirect-title">
+        <h3>Departamentos</h3>
+      </div>
+    </div>
+
+  </div>
+
+
+</section>
+
+<!-- <img src="assets/images/banners/catalog.jpg" class="catalog" alt=""> -->
+
+<div class="center">
+
+  <h2 class="bot-60">Nuestras Sedes</h2>
+</div>
+
+<section id="sites" class="margin-10-percent bot-60">
+
+  <div class="redirect" (click)="viewSite(
+    'Principal',
+    'Sede Principal Benavides.jpg',
+    ['(0416) - 615.58.44', '(0412) - 518.82.42', '(0251) - 232.96.72'],
+    'Carrera 21 esquina calle 29.'
+  )">
+    <img src="assets/images/Sede Principal Benavides.jpg" alt="">
+    <div class="redirect-title">
+      <h3>Principal</h3>
+    </div>
+  </div>
+
+  <!-- <img src="../../../assets/images/IMG_7408.JPG" alt=""> -->
+
+  <div class="redirect" (click)="viewSite(
+    'Churún Merú',
+    'Sede Churun Meru Benavides.jpg',
+    ['(0424) - 547.33.79', '(0251) - 255.42.28'],
+    'C.C. Churún Merú, entrada posterior.'
+  )">
+    <img src="assets/images/Sede Churun Meru Benavides.jpg" alt="">
+    <div class="redirect-title">
+      <h3>Churún Merú</h3>
+    </div>
+  </div>
+
+  <div class="redirect" (click)="viewSite(
+    'Cabudare',
+    'Sede Cabudare Benavides.jpg',
+    ['(0424) - 587.41.97', '(0416) - 651.58.45'],
+    'Av. Libertador, C.C. Plaza Nivel PB, L-02. Frente a la Plaza Bolívar.'
+  )">
+    <img src="assets/images/Sede Cabudare Benavides.jpg" alt="">
+    <div class="redirect-title">
+      <h3>Cabudare</h3>
+    </div>
+  </div>
+
+  <div class="redirect" (click)="viewSite(
+    'Barquisimeto Centro',
+    'Sede Sucursal Benavides.jpg',
+    ['(0424) - 558.83.45', '(0412) - 516.24.43'],
+    'Calle 21, Edif. Car - ben, Local 1.'
+  )">
+    <img src="assets/images/Sede Sucursal Benavides.jpg" alt="">
+    <div class="redirect-title">
+      <h3>Barquisimeto Centro</h3>
+    </div>
+  </div>
+
+</section>
+
+<div class="bot-60">
+  <color-test></color-test>
+</div>
+
+<div class="featured margin-10-percent bot-60">
+
+  <h2 class="bot-60">Productos Destacados</h2>
+
+  <div class="grid-4">
+    <article
+    *ngFor="let i of [1,1,1,1,1,1,1,1], let idx = index"
+      [article]="{
+        title: 'Producto',
+        img: 'assets/images/lata generica.jpg',
+        price: 4500,
+        id: 1
+      }"
+      [index]="idx"
+    ></article>
+  </div>
+</div>
+
+
+
+

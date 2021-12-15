@@ -1,0 +1,13 @@
+<div class="margin-10-percent">
+  <p>
+    <strong>{{ title }}</strong>
+    <ng-container *ngFor="let c of crumbs; let i = index">
+      <span class="link" [routerLink]="'/' + c.url">
+        {{c.title}}
+      </span>
+      <span class="arrow" *ngIf="crumbs.length != (i + 1)">
+        /
+      </span>
+    </ng-container>
+  </p>
+</div>
