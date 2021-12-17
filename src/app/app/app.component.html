@@ -1,11 +1,11 @@
-<header>
+<header class="margin-10-percent">
   <img src="assets/images/logo.png" alt="Pinturas Benavides">
 
   <ul>
     <a [routerLink]="'home'">
       <li>Inicio</li>
     </a>
-    <a [routerLink]="'home'">
+    <a [routerLink]="'products'">
       <li>Productos</li>
     </a>
     <a [routerLink]="'about'">
@@ -24,6 +24,32 @@
     <div><span>99</span></div>
   </div>
 </header>
+
+<section class="responsive-header">
+
+  <div class="menu-header">
+    <img src="../../assets/images/logo2.png" alt="">
+
+    <div (click)="opened = !opened">
+      <mat-icon>menu</mat-icon>
+    </div>
+  </div>
+
+  <div class="menu-container" [style.background]="opened ? 'rgba(26, 26, 26, 0.3)' : 'rgba(26, 26, 26, 0)'">
+
+    <div class="menu" [style.left]="opened ? '0px' : '-70vw'">
+
+    </div>
+
+    <div class="outlay" (click)="opened = false"
+    [style.pointer-events]="opened ? 'all' : 'none'"></div>
+
+  </div>
+
+
+</section>
+
+<div class="box"></div>
 
 <router-outlet></router-outlet>
 

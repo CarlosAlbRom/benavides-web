@@ -9,7 +9,36 @@ export class DetailComponent implements OnInit {
 
   constructor() { }
 
+  public amount: number = 0;
+
+  public color: any = 1;
+
+  public selectedColor: any = 1;
+
   ngOnInit(): void {
+  }
+
+  public changeValue(method?: null | '-' | '+'){
+    switch (method) {
+      case '+':
+        this.amount++
+        break;
+
+      case '-':
+        this.amount--
+        break;
+
+      default:
+        break;
+    }
+
+    if (this.amount < 0) {
+      this.amount = 0;
+    }
+  }
+
+  public changeColor(color?: any){
+    this.color = color
   }
 
 }

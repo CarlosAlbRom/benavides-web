@@ -1,0 +1,110 @@
+<breadcrumbs
+  [title]="'Productos'"
+  [crumbs]="[
+    {
+      title: 'Inicio',
+      url: 'home'
+    },
+    {
+      title: 'Productos',
+      url: 'products'
+    }
+  ]"
+></breadcrumbs>
+
+<section class="margin-10-percent bot-60">
+
+  <div>
+    <div class="department-menu">
+      <div [className]="tab == 1 ? 'active' : 'closed'">
+        <span (click)="changeTab(1)">
+          Doméstico
+          <mat-icon>arrow_drop_down</mat-icon>
+        </span>
+        <p>Categoría 1</p>
+        <p>Categoría 2</p>
+        <p>Categoría 3</p>
+        <p>Categoría 4</p>
+        <p>Categoría 5</p>
+      </div>
+      <div [className]="tab == 2 ? 'active' : 'closed'">
+        <span (click)="changeTab(2)">
+          Artistíco
+          <mat-icon>arrow_drop_down</mat-icon>
+        </span>
+        <p>Categoría 1</p>
+        <p>Categoría 2</p>
+        <p>Categoría 3</p>
+        <p>Categoría 4</p>
+        <p>Categoría 5</p>
+      </div>
+      <div [className]="tab == 3 ? 'active' : 'closed'">
+        <span (click)="changeTab(3)">
+          Ferretería
+          <mat-icon>arrow_drop_down</mat-icon>
+        </span>
+        <p>Categoría 1</p>
+        <p>Categoría 2</p>
+        <p>Categoría 3</p>
+        <p>Categoría 4</p>
+        <p>Categoría 5</p>
+      </div>
+      <div [className]="tab == 4 ? 'active' : 'closed'">
+        <span (click)="changeTab(4)">
+          Industrial
+          <mat-icon>arrow_drop_down</mat-icon>
+        </span>
+        <p>Categoría 1</p>
+        <p>Categoría 2</p>
+        <p>Categoría 3</p>
+        <p>Categoría 4</p>
+        <p>Categoría 5</p>
+      </div>
+      <div [className]="tab == 5 ? 'active' : 'closed'">
+        <span (click)="changeTab(5)">
+          Automotriz
+          <mat-icon>arrow_drop_down</mat-icon>
+        </span>
+        <p>Categoría 1</p>
+        <p>Categoría 2</p>
+        <p>Categoría 3</p>
+        <p>Categoría 4</p>
+        <p>Categoría 5</p>
+      </div>
+      <div [className]="tab == 6 ? 'active' : 'closed'">
+        <span (click)="changeTab(6)">
+          Impermebializante
+          <mat-icon>arrow_drop_down</mat-icon>
+        </span>
+        <p>Categoría 1</p>
+        <p>Categoría 2</p>
+        <p>Categoría 3</p>
+        <p>Categoría 4</p>
+        <p>Categoría 5</p>
+      </div>
+      <div [className]="tab == 7 ? 'active' : 'closed'">
+        <span (click)="changeTab(7)">
+          Carpentería
+          <mat-icon>arrow_drop_down</mat-icon>
+        </span>
+        <p>Categoría 1</p>
+        <p>Categoría 2</p>
+        <p>Categoría 3</p>
+        <p>Categoría 4</p>
+        <p>Categoría 5</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-3">
+    <article *ngFor="let i of [1,1,1,1,1,1,1,1,1,1,1,1]; let idx = index"
+    [article]="{
+      title: 'Producto',
+      img: 'assets/images/lata generica.jpg',
+      price: 4500,
+      id: 1
+    }"
+    [index]="idx"></article>
+  </div>
+
+</section>

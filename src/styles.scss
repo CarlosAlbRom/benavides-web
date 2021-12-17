@@ -110,19 +110,21 @@
   }
 }
 
-.blue-bg{
-  background-color: $blue;
-}
 
-.blue{
-  // color: $blue;
-}
+// .blue{
+  //   // color: $blue;
+  // }
 
 body{
   margin: 0px;
   font-family: 'Roboto', sans-serif !important;
   font: 400 14px / 20px 'Roboto', sans-serif !important;
   color: #212134;
+}
+
+.blue-bg{
+  background-color: $blue;
+  color: white;
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -178,7 +180,7 @@ h4{
 }
 
 .margin-10-percent{
-  margin: 0 5%;
+  margin: 0 5% !important;
 }
 
 .bot-30{
@@ -189,11 +191,15 @@ h4{
   margin-bottom: 60px !important;
 }
 
+.top-30{
+  padding-top: 30px !important;
+}
+
 button{
   border: 0px;
   outline: none;
   border-radius: 15px;
-  padding: 5px 15px;
+  padding: 15px;
   &:hover{
     cursor: pointer;
   }
@@ -222,6 +228,15 @@ button{
     height: 35vw;
     // background: linear-gradient(135deg, rgba(163,201,1,0.3), rgba(5,51,112,0.3) 40%);
   }
+}
+
+.transition{
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+}
+
+p:last-child{
+  margin-bottom: 0px !important;
 }
 
 html, body { height: 100%; }

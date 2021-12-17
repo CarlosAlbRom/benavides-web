@@ -7,7 +7,7 @@
     },
     {
       title: 'Categoria de Producto',
-      url: 'about'
+      url: 'products'
     },
     {
       title: 'Nombre de Producto',
@@ -16,27 +16,33 @@
   ]"
 ></breadcrumbs>
 
-<section class="margin-10-percent bot-30">
-  <div>
+<section class="margin-10-percent bot-60">
+  <div class="image-container">
+    <div>
+      <img src="assets/images/lata generica.jpg" alt="">
+      <img src="assets/images/lata generica.jpg" alt="">
+      <img src="assets/images/lata generica.jpg" alt="">
+      <img src="assets/images/lata generica.jpg" alt="">
+    </div>
     <img src="assets/images/lata generica.jpg" alt="">
   </div>
 
   <div>
-    <h2>Nombre de Producto</h2>
-    <p>
+    <h2>NOMBRE DE PRODUCTO</h2>
+    <p class="bot-30">
       Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis, ex. In quibusdam quisquam doloremque
       nostrum, recusandae deleniti soluta dolore sint? Pariatur, alias esse. Soluta, vero neque. Non adipisci
       itaque voluptatibus?
     </p>
 
-    <div class="info">
-      <div>
+    <div class="info top-divider top-30">
+      <div class="bot-30">
         <h3>
-          Información de uso
+          INFORMACIÓN DE USO
         </h3>
 
         <h4>
-          Tiempo de Secado
+          <strong>TIEMPO DE SECADO</strong>
         </h4>
 
         <p>
@@ -44,29 +50,68 @@
         </p>
 
         <h4>
-          Tiempo de Secado
+          <strong>APLICACIÓN</strong>
         </h4>
 
         <p>
-          5 horas al tacto / 12 horas duro
+          Rodillo / Pincel / Soplete / Inmersión
         </p>
 
         <h4>
-          Tiempo de Secado
+          <strong>RENDIMIENTO</strong>
         </h4>
 
         <p>
-          5 horas al tacto / 12 horas duro
+          10 a 12m2/lt/mano
         </p>
       </div>
 
-      <div>
+      <div class="bot-30">
         <h3>
-          Presentaciones
+          COLORES
         </h3>
+
+        <div class="colors bot-30" (mouseleave)="color = selectedColor">
+          <div *ngFor="let i of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]" (mouseover)="changeColor(i)"
+          (click)="selectedColor = i"></div>
+        </div>
+
+        <p>Nombre de Color {{ color }}</p>
       </div>
 
+    </div>
+
+    <div class="top-divider top-30">
+      <div class="amount">
+        <p><strong>CANTIDAD</strong></p>
+        <div>
+          <span (click)="changeValue('-')">-</span>
+          <input type="number" [(ngModel)]="amount" (change)="changeValue(null)">
+          <span (click)="changeValue('+')">+</span>
+        </div>
+        <button class="blue-bg">AÑADIR AL CARRITO</button>
+      </div>
     </div>
   </div>
 
 </section>
+
+<div class="margin-10-percent bot-60 top-divider">
+
+  <h3 class="bot-60">PRODUCTOS RELACIONADOS</h3>
+
+  <div class="grid-4 bot-60">
+    <article
+    *ngFor="let i of [1,1,1,1], let idx = index"
+      [article]="{
+        title: 'Producto',
+        img: 'assets/images/lata generica.jpg',
+        price: 4500,
+        id: 1
+      }"
+      [index]="idx"
+    ></article>
+  </div>
+</div>
+
+

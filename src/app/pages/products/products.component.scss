@@ -1,0 +1,64 @@
+@import '../../common/variables.scss';
+
+section{
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 30px;
+  .department-menu{
+    border-radius: 1px;
+    border: $light-grey 1px solid;
+    div{
+      padding: 15px;
+      // height: 12pt;
+      overflow: hidden;
+      transition-duration: 0.3s;
+      transition-timing-function: ease-out;
+      border-bottom: $light-grey 1px solid;
+      &:last-child{
+        border-bottom: 0px;
+      }
+      span{
+        display: grid;
+        grid-template-columns: 1fr 15px;
+        gap: 15px;
+        align-items: center;
+        font-size: 12pt;
+        mat-icon{
+          transition-duration: 0.3s;
+          transition-timing-function: ease-out;
+          height: 15px;
+          width: 15px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        cursor: pointer;
+      }
+      p{
+        margin: 15px 0 0 5px;
+        font-size: 10pt;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.active{
+  max-height: 150pt !important;
+  mat-icon{
+    transform: rotate(180deg);
+  }
+}
+
+.closed{
+  max-height: 12pt !important;
+  mat-icon{
+    transform: rotate(0deg);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  section{
+    grid-template-columns: 1fr;
+  }
+}

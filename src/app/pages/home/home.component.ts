@@ -50,7 +50,8 @@ export class HomeComponent implements OnInit {
 
     this. imageObject = [
     {
-      image: 'https://gentelonuestro.net/pinturasbenavides/assets/slider/banner-1.jpg',
+      image: 'assets/slider/banner-1.jpg',
+      // image: 'https://gentelonuestro.net/pinturasbenavides/assets/slider/banner-1.jpg',
       thumbImage: 'https://gentelonuestro.net/pinturasbenavides/assets/slider/banner-1.jpg',
     }, {
       image: 'https://gentelonuestro.net/pinturasbenavides/assets/slider/banner-2.jpg',
