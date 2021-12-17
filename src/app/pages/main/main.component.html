@@ -1,0 +1,150 @@
+<header class="margin-10-percent">
+  <img src="assets/images/logo.png" alt="Pinturas Benavides">
+
+  <ul>
+    <a [routerLink]="'home'">
+      <li>Inicio</li>
+    </a>
+    <a [routerLink]="'products'">
+      <li>Productos</li>
+    </a>
+    <a [routerLink]="'about'">
+      <li>Nosotros</li>
+    </a>
+    <a [routerLink]="'home'">
+      <li>Galería</li>
+    </a>
+    <a [routerLink]="'home'">
+      <li>Contacto</li>
+    </a>
+  </ul>
+
+  <div class="cart">
+    <mat-icon>shopping_cart</mat-icon>
+    <div><span>99</span></div>
+  </div>
+</header>
+
+<section class="responsive-header">
+
+  <div class="menu-header">
+    <img src="../../assets/images/logo2.png" alt="">
+
+    <div (click)="opened = !opened">
+      <mat-icon>menu</mat-icon>
+    </div>
+  </div>
+
+  <div class="menu-container" [style.background]="opened ? 'rgba(26, 26, 26, 0.3)' : 'rgba(26, 26, 26, 0)'">
+
+    <div class="menu" [style.left]="opened ? '0px' : '-70vw'">
+
+    </div>
+
+    <div class="outlay" (click)="opened = false"
+    [style.pointer-events]="opened ? 'all' : 'none'"></div>
+
+  </div>
+
+
+</section>
+
+<div class="box"></div>
+
+<router-outlet></router-outlet>
+
+<img id="catalog" src="assets/images/banners/catalog.jpg" alt="">
+
+<div class="line"></div>
+
+<footer class="grid-3">
+
+  <div>
+    <img src="assets/images/logo2.png" alt="Pinturas Benavides ">
+    <h3 class="blue">¡Dale Color a tu Vida!</h3>
+    <p>
+      Pinturas Benavides se convirtió en una institución a nivel nacional, siendo la tienda de pinturas
+      con mejor atención, menores precios y la más surtida, ofreciendo sus productos al mayor y detal para el pintor en
+      el ramo.
+    </p>
+  </div>
+
+  <div>
+    <h3>SEDE PRINCIPAL</h3>
+    <p>Carrera 21 esquina calle 29.</p>
+    <span>
+      <p>(0416) - 615.58.44</p>
+      <a [href]="'https://api.whatsapp.com/send?phone=04166155844'" target="_blank">
+        <img src="assets/images/Icons/whatsapp.svg" alt="">
+      </a>
+    </span>
+    <span>
+      <p>(0412) - 518.82.42</p>
+      <a [href]="'https://api.whatsapp.com/send?phone=04125188242'" target="_blank">
+        <img src="assets/images/Icons/whatsapp.svg" alt="">
+      </a>
+    </span>
+    <span>
+      <p>(0251) - 232.96.72</p>
+      <a [href]="'https://api.whatsapp.com/send?phone=02512329672'" target="_blank">
+        <img src="assets/images/Icons/whatsapp.svg" alt="">
+      </a>
+    </span>
+  </div>
+
+  <div>
+    <h3>SEDE BARQUISIMETO CENTRO</h3>
+    <p>Calle 21, Edif. Car - ben, Local 1.</p>
+    <span>
+      <p>(0424) - 558.83.45</p>
+      <a [href]="'https://api.whatsapp.com/send?phone=04245588345'" target="_blank">
+        <img src="assets/images/Icons/whatsapp.svg" alt="">
+      </a>
+    </span>
+    <span>
+      <p>(0412) - 516.24.43</p>
+      <a [href]="'https://api.whatsapp.com/send?phone=04125162443'" target="_blank">
+        <img src="assets/images/Icons/whatsapp.svg" alt="">
+      </a>
+    </span>
+  </div>
+
+  <div>
+    <h3>SEDE CABUDARE</h3>
+    <p>Av. Libertador, C.C. Plaza Nivel PB, L-02. Frente a la Plaza Bolívar.</p>
+    <span>
+      <p>(0424) - 587.41.97</p>
+      <a [href]="'https://api.whatsapp.com/send?phone=04245874197'" target="_blank">
+        <img src="assets/images/Icons/whatsapp.svg" alt="">
+      </a>
+    </span>
+    <span>
+      <p>(0416) - 651.58.45</p>
+      <a [href]="'https://api.whatsapp.com/send?phone=04166515845'" target="_blank">
+        <img src="assets/images/Icons/whatsapp.svg" alt="">
+      </a>
+    </span>
+  </div>
+
+  <div>
+    <h3>SEDE CHURÚN MERÚ</h3>
+    <p>C.C. Churún Merú, entrada posterior.</p>
+    <span>
+      <p>(0424) - 547.33.79</p>
+      <a [href]="'https://api.whatsapp.com/send?phone=04245473379'" target="_blank">
+        <img src="assets/images/Icons/whatsapp.svg" alt="">
+      </a>
+    </span>
+    <span>
+      <p>(0251) - 255.42.28</p>
+      <a [href]="'https://api.whatsapp.com/send?phone=02512554228'" target="_blank">
+        <img src="assets/images/Icons/whatsapp.svg" alt="">
+      </a>
+    </span>
+  </div>
+
+</footer>
+
+<section class="copyright">
+  <p>© 2021-2022 Pinturas Benavides - Hecho por Gente lo Nuestro.</p>
+</section>
