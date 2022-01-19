@@ -5,6 +5,8 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { SwiperOptions } from 'swiper';
 import { MSlider } from 'src/app/models/slider.model';
 import { MatDialog } from '@angular/material/dialog';
+import { MArticle } from 'src/app/models/article.model';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-home',
@@ -18,7 +20,8 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private sliderService: SliderService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private api: ApiService
   ) { }
 
   config: SwiperOptions = {
@@ -30,40 +33,28 @@ export class HomeComponent implements OnInit {
 
   };
 
+  public featuredArticles: MArticle[] = null;
+
   ngOnInit(): void {
-    // this.sliderService.getSliders().subscribe(res => {
-    //   console.log(res);
-    //   if (res.status) {
-    //     let img: any[] = []
-    //     res.data.forEach((s: MSlider) => {
-    //       img.push({
-    //         image: `${environment.api}/slider/${s.url}`,
-    //         thumbImage: `${environment.api}/slider/${s.url}`
-    //       })
-    //     });
-
-    //     this.imageObject = img;
-
-    let origin: `C:\Users\GLN - Desarrollo\Documents\Pinturas Benavides\benavides_web\src\assets\slider`;
-
-    console.log(origin);
 
     this. imageObject = [
-    {
-      image: 'assets/slider/banner-1.jpg',
-      // image: 'https://gentelonuestro.net/pinturasbenavides/assets/slider/banner-1.jpg',
-      thumbImage: 'https://gentelonuestro.net/pinturasbenavides/assets/slider/banner-1.jpg',
-    }, {
-      image: 'https://gentelonuestro.net/pinturasbenavides/assets/slider/banner-2.jpg',
-      thumbImage: 'https://gentelonuestro.net/pinturasbenavides/assets/slider/banner-2.jpg',
-    }, {
-      image: 'https://gentelonuestro.net/pinturasbenavides/assets/slider/banner-3.jpg',
-      thumbImage: 'https://gentelonuestro.net/pinturasbenavides/assets/slider/banner-3.jpg',
-    }
-  ]
-    //   }
-    //   console.log(this.imageObject)
-    // })
+      {
+        image: 'assets/slider/banner-1.jpg',
+        // image: 'https://gentelonuestro.net/pinturasbenavides/assets/slider/banner-1.jpg',
+        thumbImage: 'https://gentelonuestro.net/pinturasbenavides/assets/slider/banner-1.jpg',
+      }, {
+        image: 'https://gentelonuestro.net/pinturasbenavides/assets/slider/banner-2.jpg',
+        thumbImage: 'https://gentelonuestro.net/pinturasbenavides/assets/slider/banner-2.jpg',
+      }, {
+        image: 'https://gentelonuestro.net/pinturasbenavides/assets/slider/banner-3.jpg',
+        thumbImage: 'https://gentelonuestro.net/pinturasbenavides/assets/slider/banner-3.jpg',
+      }
+    ]
+
+    this.api.getFeaturedArticles().subscribe(res => {
+      this.featuredArticles = res.data;
+    })
+
   }
 
   public viewSite(title: string, url: string, numbers: string[], address: string){

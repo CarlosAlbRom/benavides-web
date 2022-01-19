@@ -4,6 +4,7 @@ section{
   display: grid;
   grid-template-columns: 1fr 220px;
   border-radius: 1px;
+  max-height: 90vh;
   overflow: hidden;
   img{
     max-width: 100%;
@@ -47,4 +48,13 @@ section{
       color: white;
     }
   }
+}
+
+@media screen and (max-width: 930px) {
+
+  section{
+    grid-template-columns: 1fr;
+    overflow-y: scroll;
+  }
+
 }

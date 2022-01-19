@@ -11,7 +11,7 @@
 
 
 <section class="info bot-60 margin-10-percent">
-  <h1>Pinturas Benavides</h1>
+  <h1><span>Pinturas</span> Benavides</h1>
 
   <!-- <div class="grid-2">
     <article
@@ -34,7 +34,7 @@
     <div class="redirect">
       <img src="assets/images/Departamentos.jpg" alt="">
       <div class="redirect-title">
-        <h3>Departamentos</h3>
+        <h3>Tienda</h3>
       </div>
     </div>
 
@@ -60,7 +60,7 @@
   )">
     <img src="assets/images/Sede Principal Benavides.jpg" alt="">
     <div class="redirect-title">
-      <h3>Principal</h3>
+      <h3>Sede Principal</h3>
     </div>
   </div>
 
@@ -98,29 +98,23 @@
   )">
     <img src="assets/images/Sede Sucursal Benavides.jpg" alt="">
     <div class="redirect-title">
-      <h3>Barquisimeto Centro</h3>
+      <h3>Barquisimeto - Centro</h3>
     </div>
   </div>
 
 </section>
 
-<div class="bot-60">
-  <color-test></color-test>
-</div>
+<color-test></color-test>
 
-<div class="featured margin-10-percent bot-60">
+<div class="featured" *ngIf="featuredArticles">
 
   <h2 class="bot-60">Productos Destacados</h2>
 
   <div class="grid-4">
     <article
-    *ngFor="let i of [1,1,1,1,1,1,1,1], let idx = index"
-      [article]="{
-        title: 'Producto',
-        img: 'assets/images/lata generica.jpg',
-        price: 4500,
-        id: 1
-      }"
+    *ngFor="let i of featuredArticles, let idx = index"
+      [article]="i"
+      [white]="true"
       [index]="idx"
     ></article>
   </div>

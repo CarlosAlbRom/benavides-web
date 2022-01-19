@@ -34,6 +34,11 @@ const routes: Routes = [
       {
         path: 'galery',
         loadChildren: () => import('../home/home.module').then(m => m.HomeModule)
+      },
+      {
+        redirectTo: 'home',
+        path: '',
+        pathMatch: 'full'
       }
     ]
   }

@@ -10,6 +10,7 @@ export class MainComponent implements OnInit {
   constructor() { }
 
   public opened: boolean = false;
+  public showList: boolean = false;
 
   ngOnInit(): void {
   }

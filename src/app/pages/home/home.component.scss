@@ -9,11 +9,19 @@
   padding-top: 23px;
   h1{
     font-size: 32pt !important;
-    // color: $blue;
+    color: $light-blue;
     text-align: center;
     font-weight: 600;
     margin: 30px 0 60px !important;
+    span{
+      color: $light-green;
+    }
   }
+}
+
+.center h2{
+  font-size: 32pt !important;
+  color: $light-blue;
 }
 
 .catalog{
@@ -141,8 +149,13 @@
 //   }
 // }
 
-.featured .grid-4{
-  gap: 30px;
+.featured {
+  padding: 30px 10%;
+  background: $light-blue;
+  color: #ffffff;
+  .grid-4{
+    gap: 30px;
+  }
 }
 
 .redirect{
@@ -163,14 +176,18 @@
     justify-content: center;
     align-items: center;
     height: 50px;
-    background: rgba(33, 33, 52, 0.6);
+    background: rgba(5, 51, 112, 0.8);
     transition-duration: 0.2s;
     transition-timing-function: ease-out;
     border-bottom-left-radius: 1px;
     border-bottom-right-radius: 1px;
     h3{
-      color: white;
-      letter-spacing: 1pt;
+      color: $light-green;
+      font-weight: 600;
+      letter-spacing: 2pt;
+      text-align: center;
+      transition-duration: 0.2s;
+      transition-timing-function: ease-out;
     }
   }
   &:hover{
@@ -178,6 +195,11 @@
     div{
       height: calc(100% - 0px);
       border-radius: 1px;
+    }
+    .redirect-title{
+      h3{
+        font-size: 18pt;
+      }
     }
   }
 }
@@ -235,12 +257,33 @@
 
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1200px) {
 
   #sites{
     grid-template-columns: 1fr 1fr;
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+
+  #sites{
     .redirect{
       height: 45vw;
+    }
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+
+  #sites{
+    grid-template-columns: 1fr;
+    .redirect{
+      img{
+        height: auto;
+        width: 100%;
+      }
     }
   }
 

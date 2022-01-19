@@ -6,7 +6,7 @@
       <li>Inicio</li>
     </a>
     <a [routerLink]="'products'">
-      <li>Productos</li>
+      <li>Tienda</li>
     </a>
     <a [routerLink]="'about'">
       <li>Nosotros</li>
@@ -19,13 +19,9 @@
     </a>
   </ul>
 
-  <div class="cart">
-    <mat-icon>shopping_cart</mat-icon>
-    <div><span>99</span></div>
-  </div>
 </header>
 
-<section class="responsive-header">
+<section class="responsive-header" (click)="showList = false">
 
   <div class="menu-header">
     <img src="../../assets/images/logo2.png" alt="">
@@ -35,17 +31,43 @@
     </div>
   </div>
 
-  <div class="menu-container" [style.background]="opened ? 'rgba(26, 26, 26, 0.3)' : 'rgba(26, 26, 26, 0)'">
+  <div class="menu-container" [style.background]="opened ? 'rgba(26, 26, 26, 0.5)' : 'rgba(26, 26, 26, 0)'">
 
     <div class="menu" [style.left]="opened ? '0px' : '-70vw'">
+      <div>
 
+        <a [routerLink]="'home'" (click)="opened = false">
+          <img src="assets/images/icons/home.png">
+          <span>Inicio</span>
+        </a>
+
+        <a [routerLink]="'products'" (click)="opened = false">
+          <img src="assets/images/icons/package.png">
+          <span>Tienda</span>
+        </a>
+
+        <a [routerLink]="'about'" (click)="opened = false">
+          <img src="assets/images/icons/information-button.png">
+          <span>Nosotros</span>
+        </a>
+
+        <a [routerLink]="'gallery'" (click)="opened = false">
+          <img src="assets/images/icons/gallery.png">
+          <span>Galería</span>
+        </a>
+
+        <a [routerLink]="'support'" (click)="opened = false">
+          <img src="assets/images/icons/support.png">
+          <span>Contacto</span>
+        </a>
+
+      </div>
     </div>
 
     <div class="outlay" (click)="opened = false"
     [style.pointer-events]="opened ? 'all' : 'none'"></div>
 
   </div>
-
 
 </section>
 
@@ -75,19 +97,19 @@
     <span>
       <p>(0416) - 615.58.44</p>
       <a [href]="'https://api.whatsapp.com/send?phone=04166155844'" target="_blank">
-        <img src="assets/images/Icons/whatsapp.svg" alt="">
+        <img src="assets/images/icons/whatsapp.svg" alt="">
       </a>
     </span>
     <span>
       <p>(0412) - 518.82.42</p>
       <a [href]="'https://api.whatsapp.com/send?phone=04125188242'" target="_blank">
-        <img src="assets/images/Icons/whatsapp.svg" alt="">
+        <img src="assets/images/icons/whatsapp.svg" alt="">
       </a>
     </span>
     <span>
       <p>(0251) - 232.96.72</p>
       <a [href]="'https://api.whatsapp.com/send?phone=02512329672'" target="_blank">
-        <img src="assets/images/Icons/whatsapp.svg" alt="">
+        <img src="assets/images/icons/whatsapp.svg" alt="">
       </a>
     </span>
   </div>
@@ -98,13 +120,13 @@
     <span>
       <p>(0424) - 558.83.45</p>
       <a [href]="'https://api.whatsapp.com/send?phone=04245588345'" target="_blank">
-        <img src="assets/images/Icons/whatsapp.svg" alt="">
+        <img src="assets/images/icons/whatsapp.svg" alt="">
       </a>
     </span>
     <span>
       <p>(0412) - 516.24.43</p>
       <a [href]="'https://api.whatsapp.com/send?phone=04125162443'" target="_blank">
-        <img src="assets/images/Icons/whatsapp.svg" alt="">
+        <img src="assets/images/icons/whatsapp.svg" alt="">
       </a>
     </span>
   </div>
@@ -115,13 +137,13 @@
     <span>
       <p>(0424) - 587.41.97</p>
       <a [href]="'https://api.whatsapp.com/send?phone=04245874197'" target="_blank">
-        <img src="assets/images/Icons/whatsapp.svg" alt="">
+        <img src="assets/images/icons/whatsapp.svg" alt="">
       </a>
     </span>
     <span>
       <p>(0416) - 651.58.45</p>
       <a [href]="'https://api.whatsapp.com/send?phone=04166515845'" target="_blank">
-        <img src="assets/images/Icons/whatsapp.svg" alt="">
+        <img src="assets/images/icons/whatsapp.svg" alt="">
       </a>
     </span>
   </div>
@@ -132,19 +154,37 @@
     <span>
       <p>(0424) - 547.33.79</p>
       <a [href]="'https://api.whatsapp.com/send?phone=04245473379'" target="_blank">
-        <img src="assets/images/Icons/whatsapp.svg" alt="">
+        <img src="assets/images/icons/whatsapp.svg" alt="">
       </a>
     </span>
     <span>
       <p>(0251) - 255.42.28</p>
       <a [href]="'https://api.whatsapp.com/send?phone=02512554228'" target="_blank">
-        <img src="assets/images/Icons/whatsapp.svg" alt="">
+        <img src="assets/images/icons/whatsapp.svg" alt="">
       </a>
     </span>
   </div>
 
 </footer>
 
+
 <section class="copyright">
   <p>© 2021-2022 Pinturas Benavides - Hecho por Gente lo Nuestro.</p>
+</section>
+
+<div class="cart" (click)="showList = !showList">
+  <mat-icon>shopping_cart</mat-icon>
+  <div><span>99</span></div>
+</div>
+
+<section class="shopping-list" [style.pointer-events]="showList ? 'all' : 'none'"
+[style.background]="showList ? 'rgba(26, 26, 26, 0.5)' : 'rgba(26, 26, 26, 0)'">
+
+  <div class="outlay" (click)="showList = false"
+  [style.pointer-events]="showList ? 'all' : 'none'"></div>
+  
+  <div [ngClass]="{'list': true, 'right': !showList}">
+
+  </div>
+
 </section>
