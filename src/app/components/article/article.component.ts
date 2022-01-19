@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MArticle } from 'src/app/models/article.model';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -8,7 +9,7 @@ import { environment } from 'src/environments/environment';
 })
 export class ArticleComponent implements OnInit {
 
-  @Input() public article: Article = null;
+  @Input() public article: MArticle = null;
   @Input() public index: number = null;
   @Input() public white: boolean = false;
 
@@ -28,12 +29,4 @@ export class ArticleComponent implements OnInit {
     // }
   }
 
-}
-
-interface Article{
-  title: string,
-  img: string,
-  price?: number,
-  size?: number,
-  id: number
 }

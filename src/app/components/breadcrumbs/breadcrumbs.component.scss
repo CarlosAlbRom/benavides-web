@@ -7,8 +7,9 @@ span{
 }
 
 p{
-  margin: 30px 0 !important;
+  margin: 25px 0 !important;
   cursor: default;
+  line-height: 30px;
   .link{
     &:hover{
       cursor: pointer;
