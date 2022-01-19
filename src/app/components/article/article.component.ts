@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'article',
@@ -9,8 +10,11 @@ export class ArticleComponent implements OnInit {
 
   @Input() public article: Article = null;
   @Input() public index: number = null;
+  @Input() public white: boolean = false;
 
   public color: string = "#053370";
+
+  public base: string = `${environment.api}/image/`
 
   constructor() { }
 
