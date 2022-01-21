@@ -1,0 +1,16 @@
+<div class="cart-item">
+
+    <img [src]="base + article.image" alt="">
+
+    <div class="item-line">
+        <span>{{ article.name }}</span>
+        <img src="assets/images/icons/close.png" (click)="onClose()">
+    </div>
+
+    <div class="amount-line">
+        <span (click)="changeValue('-')">-</span>
+        <input type="number" [(ngModel)]="article.amount" (change)="changeValue(null)">
+        <span (click)="changeValue('+')">+</span>
+    </div>
+
+</div>

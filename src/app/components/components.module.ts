@@ -7,6 +7,8 @@ import { SiteViewerComponent } from './site-viewer/site-viewer.component';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 import { PageLoadingComponent } from './page-loading/page-loading.component';
 import { MiniLoadingComponent } from './mini-loading/mini-loading.component';
+import { CartItemComponent } from './cart-item/cart-item.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -17,11 +19,13 @@ import { MiniLoadingComponent } from './mini-loading/mini-loading.component';
     SiteViewerComponent,
     BreadcrumbsComponent,
     PageLoadingComponent,
-    MiniLoadingComponent
+    MiniLoadingComponent,
+    CartItemComponent
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ],
   exports: [
     ArticleComponent,
@@ -29,7 +33,8 @@ import { MiniLoadingComponent } from './mini-loading/mini-loading.component';
     SiteViewerComponent,
     BreadcrumbsComponent,
     PageLoadingComponent,
-    MiniLoadingComponent
+    MiniLoadingComponent,
+    CartItemComponent
   ]
 })
 export class ComponentsModule { }

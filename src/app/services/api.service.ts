@@ -86,4 +86,15 @@ export class ApiService {
     )
   }
 
+  public getColorsByType(type: number){
+    return this.http.get<APIResponse>(`${environment.api}/color/type/${type}`).pipe(
+      map((res) => {
+        if (res.status) {
+          res.data = res.data.map((c: IColor) => new MColor(c))
+        }
+        return res;
+      })
+    )
+  }
+
 }

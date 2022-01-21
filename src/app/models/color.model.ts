@@ -7,6 +7,8 @@ export class MColor extends MBase {
   public name: string = null;
   public code: string = null;
   public hex: string = null;
+  public amount: number = 0;
+  public type: number = 0;
 
   constructor(color?: IColor){
     super()
@@ -16,6 +18,7 @@ export class MColor extends MBase {
       this.name = color.name;
       this.code = color.code;
       this.hex = color.hex;
+      this.type = color.type;
     } else {
       this.isNew = true;
     }
@@ -27,7 +30,8 @@ export class MColor extends MBase {
       id_color: this.id,
       code: this.code,
       name: this.name,
-      hex: this.hex
+      hex: this.hex,
+      type: this.type
     }
   }
 

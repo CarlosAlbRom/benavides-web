@@ -1,4 +1,4 @@
-<header class="margin-10-percent">
+<header>
   <img src="assets/images/logo.png" alt="Pinturas Benavides">
 
   <ul>
@@ -76,8 +76,6 @@
 <router-outlet></router-outlet>
 
 <img id="catalog" src="assets/images/banners/catalog.jpg" alt="">
-
-<div class="line"></div>
 
 <footer class="grid-3">
 
@@ -174,7 +172,9 @@
 
 <div class="cart" (click)="showList = !showList">
   <mat-icon>shopping_cart</mat-icon>
-  <div><span>99</span></div>
+  <div [style.display]="articles.length >= 1 ? 'flex' : 'none'">
+    <span>{{ articles.length }}</span>
+  </div>
 </div>
 
 <section class="shopping-list" [style.pointer-events]="showList ? 'all' : 'none'"
@@ -184,7 +184,39 @@
   [style.pointer-events]="showList ? 'all' : 'none'"></div>
   
   <div [ngClass]="{'list': true, 'right': !showList}">
+    <span class="cart-title">
+      <img src="assets/images/icons/shopping-cart.png">
+      Carrito de Compras
+    </span>
+
+    <ng-container *ngIf="articles.length >= 1; else emptyCart">
+      <cart-item *ngFor="let i of articles; let idx = index"
+      (delete)="deleteArticle(idx)"
+      (changeAmount)="updateAmount($event, idx)"
+      [article]="i"></cart-item>
+
+      <button class="blue-bg">
+        Procesar Pago
+      </button>
+    </ng-container>
 
   </div>
 
 </section>
+
+<ng-template #emptyCart>
+
+  <div class="empty-cart">
+    <p>Tu carrito está vacío</p>
+  
+    <div class="center">
+      <img src="assets/images/icons/shopping-cart-white.png">
+    </div>
+  
+    <button class="blue-bg" [routerLink]="['/products']" (click)="showList = false">
+      ¡Visita nuestra tienda!
+    </button>
+  </div>
+
+
+</ng-template>

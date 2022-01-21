@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { SwiperModule } from 'swiper/angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { AlertModule } from 'ngx-alerts';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,13 @@ import { HttpClientModule } from '@angular/common/http';
     SwiperModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    CommonContentModule
+    CommonContentModule,
+    AlertModule.forRoot({
+      maxMessages: 5, 
+      timeout: 5000,
+      positionX: 'right',
+      positionY: 'bottom'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

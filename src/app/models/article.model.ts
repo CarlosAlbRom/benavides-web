@@ -1,5 +1,6 @@
 import { IArticle } from '../interfaces/article.interface';
 import { MBase } from "./basic.model";
+import { MColor } from './color.model';
 
 export class MArticle extends MBase {
 
@@ -12,6 +13,9 @@ export class MArticle extends MBase {
   public price: number = null;
   public featured: boolean = false;
   public description: string = null;
+  public colors: MColor[] = [];
+  public type: number = 0;
+  public amount: number = 0;
 
   constructor(article?: IArticle){
     super()
@@ -26,6 +30,7 @@ export class MArticle extends MBase {
       this.price = article.price;
       this.featured = article.featured;
       this.description = article.description
+      this.type = article.type
     } else {
       this.isNew = true;
     }
@@ -42,7 +47,8 @@ export class MArticle extends MBase {
       description: this.description,
       featured: this.featured,
       image_url: this.image,
-      price: this.price
+      price: this.price,
+      type: this.type
     }
   }
 

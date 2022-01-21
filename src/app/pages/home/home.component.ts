@@ -33,6 +33,7 @@ export class HomeComponent implements OnInit {
 
   };
 
+  public apiRoute: string = environment.api;
   public featuredArticles: MArticle[] = null;
 
   ngOnInit(): void {
@@ -41,13 +42,13 @@ export class HomeComponent implements OnInit {
       {
         image: 'assets/slider/banner-1.jpg',
         // image: 'https://gentelonuestro.net/pinturasbenavides/assets/slider/banner-1.jpg',
-        thumbImage: 'https://gentelonuestro.net/pinturasbenavides/assets/slider/banner-1.jpg',
+        thumbImage: 'assets/slider/banner-1.jpg',
       }, {
-        image: 'https://gentelonuestro.net/pinturasbenavides/assets/slider/banner-2.jpg',
-        thumbImage: 'https://gentelonuestro.net/pinturasbenavides/assets/slider/banner-2.jpg',
+        image: 'assets/slider/banner-2.jpg',
+        thumbImage: 'assets/slider/banner-2.jpg',
       }, {
-        image: 'https://gentelonuestro.net/pinturasbenavides/assets/slider/banner-3.jpg',
-        thumbImage: 'https://gentelonuestro.net/pinturasbenavides/assets/slider/banner-3.jpg',
+        image: 'assets/slider/banner-3.jpg',
+        thumbImage: 'assets/slider/banner-3.jpg',
       }
     ]
 

@@ -3,5 +3,6 @@ export interface IColor{
     name: string;
     code: string;
     hex: string;
+    type: number;
 }
 

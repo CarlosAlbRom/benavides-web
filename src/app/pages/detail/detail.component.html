@@ -1,4 +1,4 @@
-<ng-container *ngIf="article; else loading">
+<ng-container *ngIf="article; else loadingArticle">
   <breadcrumbs
     [title]="'Acerca de Nosotros'"
     [crumbs]="[
@@ -25,7 +25,7 @@
         <img src="assets/images/lata generica.jpg" alt="">
         <img src="assets/images/lata generica.jpg" alt="">
       </div> -->
-      <img src="assets/images/lata generica.jpg" alt="">
+      <img [src]="apiRoute + '/image/' + article.image" alt="">
     </div>
 
     <div>
@@ -34,84 +34,70 @@
         {{ article.description }}
       </p>
 
-      <div class="info top-divider top-30">
-        <!-- <div class="bot-30">
-          <h3>
-            INFORMACIÓN DE USO
-          </h3>
+      <ng-container *ngIf="!loading; else miniLoading">
+        
+        <div class="info top-divider top-30" *ngIf="allColor.length >= 1">
 
-          <h4>
-            <strong>TIEMPO DE SECADO</strong>
-          </h4>
-
-          <p>
-            5 horas al tacto / 12 horas duro
-          </p>
-
-          <h4>
-            <strong>APLICACIÓN</strong>
-          </h4>
-
-          <p>
-            Rodillo / Pincel / Soplete / Inmersión
-          </p>
-
-          <h4>
-            <strong>RENDIMIENTO</strong>
-          </h4>
-
-          <p>
-            10 a 12m2/lt/mano
-          </p>
-        </div> -->
-
-        <div class="bot-30">
-          <h3>
-            COLORES
-          </h3>
-
-          <div class="colors bot-30" (mouseleave)="colorName = selectedColor.name">
-            <div *ngFor="let c of allColor; let i = index" 
-            [style.background]="'#' + c.hex"
-            (mouseover)="colorName = c.name"
-            (click)="selectedColor = c"></div>
+          <div class="bot-30">
+            <h3>
+              COLORES
+            </h3>
+  
+            <div class="colors bot-30" 
+            (mouseleave)="colorName = selectedColor.name; colorCode = selectedColor.code">
+              <div *ngFor="let c of allColor; let i = index" 
+              [style.background]="'#' + c.hex"
+              (mouseover)="colorName = c.name; colorCode = c.code"
+              (click)="selectedColor = c"></div>
+            </div>
+  
+            <p>Nombre de Color: {{ colorCode }} {{ colorName }}</p>
           </div>
 
-          <p>Nombre de Color: {{ colorName }}</p>
         </div>
+          
+      </ng-container>
 
-      </div>
-
-      <div class="top-divider top-30">
+      <div class="top-divider top-30 bot-min-30">
         <div class="amount">
           <p><strong>CANTIDAD</strong></p>
           <div>
             <span (click)="changeValue('-')">-</span>
-            <input type="number" [(ngModel)]="amount" (change)="changeValue(null)">
+            <input type="number" [(ngModel)]="article.amount" (change)="changeValue(null)">
             <span (click)="changeValue('+')">+</span>
           </div>
-          <button class="blue-bg">AÑADIR AL CARRITO</button>
+          <button 
+            class="blue-bg" 
+            (click)="addToCart()"
+            [ngClass]="{disabled: article.amount == 0}" 
+            [disabled]="article.amount == 0"
+          >AÑADIR AL CARRITO</button>
         </div>
       </div>
     </div>
 
   </section>
 
-  <div class="margin-10-percent bot-60 top-divider">
+  <ng-container *ngIf="!loading; else miniLoading">
 
-    <h3 class="bot-60">PRODUCTOS RELACIONADOS</h3>
-
-    <div class="grid-4 bot-60" *ngIf="relatedArticles; else miniLoading">
-      <article
-      *ngFor="let i of relatedArticles, let idx = index"
-        [article]="i"
-        [index]="idx"
-      ></article>
+    <div class="margin-10-percent bot-60 top-divider" *ngIf="relatedArticles.length >= 1">
+  
+      <h3 class="bot-30 top-min-30">PRODUCTOS RELACIONADOS</h3>
+  
+      <div class="grid-4 bot-60" >
+        <article
+        *ngFor="let i of relatedArticles, let idx = index"
+          [article]="i"
+          [index]="idx"
+        ></article>
+      </div>
     </div>
-  </div>
+
+  </ng-container>
+
 </ng-container>
 
-<ng-template #loading>
+<ng-template #loadingArticle>
   <page-loading></page-loading>
 </ng-template>
 

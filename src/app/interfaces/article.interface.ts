@@ -8,4 +8,5 @@ export interface IArticle{
     description: string;
     price: number;
     featured: boolean;
+    type: number;
 }
