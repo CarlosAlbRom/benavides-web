@@ -33,6 +33,7 @@ export class HomeComponent implements OnInit {
 
   };
 
+  public height: number = 1000
   public apiRoute: string = environment.api;
   public featuredArticles: MArticle[] = null;
 

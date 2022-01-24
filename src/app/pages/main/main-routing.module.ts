@@ -27,13 +27,17 @@ const routes: Routes = [
         path: 'products',
         loadChildren: () => import('../products/products.module').then(m => m.ProductsModule)
       },
+      {
+        path: 'contact',
+        loadChildren: () => import('../contact/contact.module').then(m => m.ContactModule)
+      },
       // {
       //   path: 'admin',
       //   loadChildren: () => import('../admin/admin.module').then(m => m.adminModule)
       // },
       {
         path: 'galery',
-        loadChildren: () => import('../home/home.module').then(m => m.HomeModule)
+        loadChildren: () => import('../galery/galery.module').then(m => m.GaleryModule)
       },
       {
         redirectTo: 'home',

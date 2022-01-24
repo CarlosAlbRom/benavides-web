@@ -1,0 +1,13 @@
+.grid-4{
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    div{
+        // height: 400px;
+        overflow: hidden;
+        width: 100%;
+        img{
+            width: 100%;
+        }
+    }
+}

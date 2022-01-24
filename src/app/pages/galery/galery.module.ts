@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { GaleryRoutingModule } from './galery-routing.module';
 import { GaleryComponent } from './galery.component';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { GaleryComponent } from './galery.component';
   ],
   imports: [
     CommonModule,
-    GaleryRoutingModule
+    GaleryRoutingModule,
+    ComponentsModule
   ]
 })
 export class GaleryModule { }
