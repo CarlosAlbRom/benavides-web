@@ -1,7 +1,6 @@
 <!-- <div class="article" [style.border]="' 2px solid ' + color"> -->
 <div [ngClass]="{'article': true, 'white-article': white}" 
 [routerLink]="['/detail/' + article.id]">
-  <!-- (n % 1) !== 0 -->
 
   <div>
     <img [src]="base + article.image" [alt]="article.name">

@@ -10,6 +10,7 @@ header{
   text-align: center;
   img{
     width: 75px;
+    cursor: pointer;
   }
   ul{
     padding: 0px;
@@ -218,6 +219,7 @@ footer{
   justify-content: center;
   align-items: center;
   border-radius: 50%;
+  z-index: 4;
   cursor: pointer;
   div{
     position: absolute;
@@ -308,6 +310,16 @@ footer{
     // background-color: $light-green;
     width: 100%;
     pointer-events: all;
+  }
+  h3{
+    margin-top: 30px !important;
+    text-align: left;
+    font-size: 16pt;
+    font-weight: 600;
+  }
+  .shopping-container{
+    max-height: calc(100vh - 210px);
+    overflow-y: scroll;
   }
 }
 

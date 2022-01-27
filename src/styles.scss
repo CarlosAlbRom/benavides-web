@@ -242,6 +242,46 @@ p:last-child{
   margin-bottom: 0px !important;
 }
 
+
+.contact-form{
+  display: flex;
+  flex-direction: column;
+  input, textarea, select{
+    width: calc(100% - 24px);
+    margin-bottom: 30px;
+    padding: 10px;
+    border-radius: 3px;
+    outline: none;
+    border: 1px solid $light-blue;
+    color: $text;
+  }
+  select{
+    width: calc(100% - 2px);
+  }
+  textarea{
+    height: 60px;
+  }
+  h3{
+    color: $blue;
+    font-size: 18pt;
+    font-weight: 600;
+    margin-bottom: 30px !important;
+  }
+  button{
+      width: 100%;
+  }
+  .contact-input{
+      position: relative;
+      span{
+          position: absolute;
+          left: 11px;
+          bottom: 4px;
+          color: #eb2c2c !important;
+          font-weight: 600;
+      }
+  }
+}
+
 html, body { height: 100%; }
 // body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 

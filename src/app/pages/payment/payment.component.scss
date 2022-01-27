@@ -1,0 +1,29 @@
+@import '../../common/variables.scss';
+
+h3{
+    font-size: 18pt !important;
+    color: $blue;
+    font-weight: 600;
+    margin: 0 0 15px !important;
+}
+
+.total{
+    margin: 15px 0 0 !important;
+}
+
+.pay-info{
+    div{
+        border: $light-grey 1px solid;
+        border-radius: 3px;
+        padding: 15px;
+        height: fit-content;
+    }
+}
+
+h4{
+    text-align: center;
+    padding: 60px;
+    font-size: 18pt !important;
+    color: $blue;
+    font-weight: 600;
+}

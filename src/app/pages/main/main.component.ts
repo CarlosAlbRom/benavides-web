@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵɵtrustConstantResourceUrl } from '@angular/core';
+import { Router } from '@angular/router';
 import { MArticle } from 'src/app/models/article.model';
 
 @Component({
@@ -10,7 +11,9 @@ export class MainComponent implements OnInit {
 
   public articles: MArticle[] = [];
 
-  constructor() { }
+  constructor(
+    private route: Router
+  ) { }
 
   public opened: boolean = false;
   public showList: boolean = false;
@@ -22,6 +25,11 @@ export class MainComponent implements OnInit {
     } else {
       this.updateState()
     }
+  }
+
+  public setArticles(articles: MArticle[]){
+    this.articles = articles;
+    this.updateState();
   }
 
   public addToCart(article: MArticle){
@@ -53,6 +61,18 @@ export class MainComponent implements OnInit {
   private updateState(){
     let a = JSON.stringify(this.articles)
     localStorage.setItem("shopping-cart", a);
+  }
+
+  public addAll(): number{
+    let i = 0;
+    this.articles.forEach((a) => {
+      i =+ (a.amount * a.price);
+    })
+    return i;
+  }
+
+  public getCurrentRoute(): string{
+    return this.route.url;
   }
 
 }

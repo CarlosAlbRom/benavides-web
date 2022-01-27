@@ -1,6 +1,7 @@
 import { MainComponent } from './main.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { PaymentComponent } from '../payment/payment.component';
 
 const routes: Routes = [
   {
@@ -38,6 +39,10 @@ const routes: Routes = [
       {
         path: 'galery',
         loadChildren: () => import('../galery/galery.module').then(m => m.GaleryModule)
+      },
+      {
+        path: 'payment',
+        loadChildren: () => import('../payment/payment.module').then(m => m.PaymentModule)
       },
       {
         redirectTo: 'home',

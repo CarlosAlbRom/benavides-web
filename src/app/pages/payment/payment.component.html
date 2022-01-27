@@ -1,0 +1,127 @@
+<breadcrumbs
+  [title]="'Confirmar pago'"
+  [crumbs]="[
+    {
+      title: 'Inicio',
+      url: 'home'
+    },
+    {
+      title: 'Tienda',
+      url: 'products'
+    },
+    {
+      title: 'Confirmar pago',
+      url: 'payment'
+    }
+  ]"
+></breadcrumbs>
+
+<section class="bot-30 margin-10-percent" *ngIf="articles; else loading">
+
+  <ng-container *ngIf="articles.length > 0; else noItems">
+
+    <div class="grid-2 bot-30">
+      <div class="contact-form">
+  
+        <h3>DATOS DE CONTACTO</h3>
+  
+        <div class="contact-input">
+          <input type="text" placeholder="Nombre y Apellido *" [(ngModel)]="name">
+          <span>{{ error.name }}</span>
+        </div>
+  
+        <div class="contact-input">
+          <input type="text" placeholder="Correo Electrónico *" [(ngModel)]="email">
+          <span>{{ error.email }}</span>
+        </div>
+  
+        <div class="contact-input">
+          <input type="text" placeholder="Teléfono *" [(ngModel)]="phone">
+          <span>{{ error.phone }}</span>
+        </div>
+  
+        <div class="contact-input">
+          <input type="text" placeholder="Ciudad *" [(ngModel)]="city">
+          <span>{{ error.city }}</span>
+        </div>
+  
+        <select name="" id="">
+          <option value="">Sede Principal</option>
+          <option value="">Barquisimeto - Centro</option>
+          <option value="">Cabudare</option>
+          <option value="">Churún Merú</option>
+        </select>
+  
+        <div class="contact-input">
+          <textarea name="" id="" cols="30" rows="10" placeholder="Dirección" 
+          [(ngModel)]="address"></textarea>
+          <span>{{ error.address }}</span>
+        </div>
+  
+        <textarea name="" id="" cols="30" rows="10" placeholder="Mensaje" 
+        [(ngModel)]="message"></textarea>
+  
+        <button class="blue-bg" (click)="sendEmail()">
+            Enviar formularío
+        </button>
+      </div>
+  
+      <div>
+        <cart-item *ngFor="let i of articles; let idx = index"
+            (delete)="deleteArticle(idx)"
+            (changeAmount)="updateAmount($event, idx)"
+            [article]="i"
+          ></cart-item>
+  
+        <h3 class="total">Total: {{ addAll() }} Bs.</h3> 
+      </div>
+  
+    </div>
+  
+    <div class="grid-2 pay-info">
+  
+      <div>
+        <h3>Zelle</h3>
+        <p>pablojesusbenavidescetra@gmail.com</p>
+      </div>
+  
+      <div>
+        <h3>Sede Principal</h3>
+        <p>Provincial: 0108-0061-71-0100132071</p>
+        <p>Banesco: 0134-0326-17-3261106224</p>
+        <p>Mercantil: 0105-0666-21-1666130362</p>
+        <p>BFC: 0151-0068-17-8680014982</p>
+        <p>Bancrecer: 0168-0003-13-5100472385</p>
+      </div>
+  
+      <div>
+        <h3>Barquisimeto - Centro</h3>
+        <p>Banesco: 0134-0326-13-2361106209</p>
+        <p>Mercantil: 0105-0666-29-1666152226</p>
+        <p>BBVA: 0108-0061-71-0100338966</p>
+      </div>
+  
+      <div>
+        <h3>Cabudare</h3>
+        <p>Banesco: 0134-0326-17-3261112539</p>
+        <p>Tesoro: 0163-0325-99-3253016890</p>
+        <p>Bancamiga: 0172-0301-13-3015076809</p>
+      </div>
+  
+    </div>
+
+  </ng-container>
+
+</section>
+
+<ng-template #loading>
+  <page-loading></page-loading>
+</ng-template>
+
+<ng-template #noItems>
+
+  <h4>
+    No se ha añadido ningún artículo
+  </h4>
+
+</ng-template>

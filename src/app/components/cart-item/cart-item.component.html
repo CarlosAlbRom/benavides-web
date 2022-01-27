@@ -7,6 +7,10 @@
         <img src="assets/images/icons/close.png" (click)="onClose()">
     </div>
 
+    <p class="price">
+        {{ article.price * article.amount }} Bs.
+    </p>
+
     <div class="amount-line">
         <span (click)="changeValue('-')">-</span>
         <input type="number" [(ngModel)]="article.amount" (change)="changeValue(null)">

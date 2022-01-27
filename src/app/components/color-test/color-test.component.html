@@ -7,22 +7,31 @@
     <div class="right" [style.background]="'#' + rightWall.hex">
       <div></div>
     </div>
+
   </div>
 
-  <h3>Simula El Hogar de tus sueños</h3>
+  <h3>Pinta con nosotros el hogar de tus sueños</h3>
+
+  <div class="button-container">
+    <div class="left-button" 
+    [ngClass]="{active: currentWall == 0}"
+    (click)="currentWall = 0">
+      <img src="assets/images/icons/painting-roller.png" alt="">
+    </div>
+
+    <div class="right-button" 
+    [ngClass]="{active: currentWall == 1}"
+    (click)="currentWall = 1">
+      <img src="assets/images/icons/painting-roller.png" alt="">
+    </div>
+  </div>
 
   <div class="controls">
     <div class="grid-2 bot-15">
       <div>
-        <button class="blue-bg" 
-        [ngClass]="{active: currentWall == 0}"
-        (click)="currentWall = 0">Pared Izquiera</button>
         <p>{{ leftWall.code }} {{ leftWall.name }}</p>
       </div>
       <div>
-        <button class="blue-bg" 
-        [ngClass]="{active: currentWall == 1}"
-        (click)="currentWall = 1">Pared Derecha</button>
         <p>{{ rightWall.code }} {{ rightWall.name }}</p>
       </div>
     </div>

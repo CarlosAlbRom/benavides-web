@@ -8,6 +8,7 @@
   div:nth-child(1){
     border-radius: 1px;
     // border: 1px solid $light-grey;
+    background-color: #ffffff;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -15,7 +16,7 @@
     overflow: hidden;
     height: 18vw;
     img{
-      width: 100%;
+      width: auto;
       height: 100%;
       transition-duration: 0.3s;
       transition-timing-function: ease-out;

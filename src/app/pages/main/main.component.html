@@ -1,5 +1,5 @@
 <header>
-  <img src="assets/images/logo.png" alt="Pinturas Benavides">
+  <img src="assets/images/logo.png" [routerLink]="'home'" alt="Pinturas Benavides">
 
   <ul>
     <a [routerLink]="'home'">
@@ -170,7 +170,7 @@
   <p>© 2021-2022 Pinturas Benavides - Hecho por Gente lo Nuestro.</p>
 </section>
 
-<div class="cart" (click)="showList = !showList">
+<div class="cart" (click)="showList = !showList" *ngIf="getCurrentRoute() != '/payment'">
   <mat-icon>shopping_cart</mat-icon>
   <div [style.display]="articles.length >= 1 ? 'flex' : 'none'">
     <span>{{ articles.length }}</span>
@@ -190,12 +190,18 @@
     </span>
 
     <ng-container *ngIf="articles.length >= 1; else emptyCart">
-      <cart-item *ngFor="let i of articles; let idx = index"
-      (delete)="deleteArticle(idx)"
-      (changeAmount)="updateAmount($event, idx)"
-      [article]="i"></cart-item>
 
-      <button class="blue-bg">
+      <div class="shopping-container">
+        <cart-item *ngFor="let i of articles; let idx = index"
+          (delete)="deleteArticle(idx)"
+          (changeAmount)="updateAmount($event, idx)"
+          [article]="i"
+        ></cart-item>
+      </div>
+
+      <h3>Total: {{ addAll() }} Bs.</h3>
+
+      <button class="blue-bg" [routerLink]="['/payment']" (click)="showList = false">
         Procesar Pago
       </button>
     </ng-container>

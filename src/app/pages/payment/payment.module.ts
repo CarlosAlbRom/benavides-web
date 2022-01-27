@@ -1,21 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { ContactRoutingModule } from './contact-routing.module';
-import { ContactComponent } from './contact.component';
+import { PaymentRoutingModule } from './payment-routing.module';
+import { PaymentComponent } from './payment.component';
 import { ComponentsModule } from 'src/app/components/components.module';
 import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
-    ContactComponent
+    PaymentComponent
   ],
   imports: [
     CommonModule,
-    ContactRoutingModule,
+    PaymentRoutingModule,
     ComponentsModule,
     FormsModule
   ]
 })
-export class ContactModule { }
+export class PaymentModule { }

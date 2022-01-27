@@ -22,7 +22,6 @@
     position: absolute;
     z-index: 2;
     top: 48vw;
-    // color: $light-green;
     color: #ffffff;
     font-weight: 600;
     font-size: 20pt;
@@ -39,31 +38,134 @@
     z-index: 1;
   }
   .controls{
-    padding: 15px 30px;
-    button{
-      width: 100%;
-      font-size: 14pt;
-    }
-    .active{
-      background: $light-blue;
-    }
+    padding: 25px 30px 15px;
     p {
       text-align: center;
       font-size: 14pt;
-      margin: 15px !important;
+      margin: 0 0 15px !important;
     }
     .flex{
       display: flex;
-      // justify-content: space-between;
       flex-wrap: wrap;
       gap: 15px;
       .color{
         width: 60px;
         height: 60px;
         border: 2px solid $light-grey;
-        // margin: 0 2.5px 5px;
         cursor: pointer;
       }
     }
   }
+  .left-button, .right-button{
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    font-size: 14pt;
+    top: calc(25vw - 45px);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+    box-shadow: #3e3e40 3px 3px 3px;
+    transition: 0.3s;
+    transition-timing-function: ease-out;
+    cursor: pointer;
+    img{
+      height: 60px;
+      width: 60px;
+      margin: 15px;
+    }
+  }
+  .left-button{
+    z-index: 2;
+    left: 15px;
+  }
+  .right-button{
+    z-index: 2;
+    right: 15px;
+    img{
+      transform: rotateY(180deg);
+    }
+  }
+  .active{
+    box-shadow: $light-green 0px 0px 3px 4px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  .test{
+
+    .walls{
+      height: calc(55vw - 10px);
+    }
+
+    h3{
+      // position: relative;
+      // top: 0;
+      // color: $blue;
+      // font-weight: 600;
+      // font-size: 18pt;
+      // letter-spacing: 1pt;
+      // text-align: center;
+      // width: calc(100% - 60px);
+      // text-shadow: none;
+      // padding: 15px 30px;
+      display: none;
+    }
+
+    .left-button, .right-button{
+      height: 60px;
+      width: 60px;
+      // position: relative;
+      top: 25px;
+      img{
+        height: 40px;
+        width: 40px;
+        margin: 10px;
+        // left: 0;
+        // right: 0;
+      }
+    }
+
+    .left-button{
+      left: 30px;
+    }
+
+    .right-button{
+      right: 30px;
+    }
+
+    .button-container{
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      justify-content: center;
+      padding: 25px 30px 0;
+      height: 60px;
+    }
+
+    .controls{
+
+      .grid-2{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        div:nth-child(1) p{
+          text-align: left !important;
+        }
+        div:nth-child(2) p{
+          text-align: right !important;
+        }
+      }
+
+    }
+
+    .flex{
+      justify-content: space-between;
+    }
+
+  }
+
 }

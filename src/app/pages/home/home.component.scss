@@ -13,6 +13,7 @@
     text-align: center;
     font-weight: 600;
     margin: 30px 0 60px !important;
+    line-height: 32pt;
     span{
       color: $light-green;
     }
@@ -162,6 +163,7 @@
   position: relative;
   img{
     width: 100%;
+    // width: auto;
     height: 100%;
     margin-bottom: -5px;
     border-radius: 1px;
@@ -241,6 +243,7 @@
   .redirect{
     // width: calc(25% - 12.5px);
     height: 30vw;
+    width: auto;
     display: flex;
     justify-content: center;
     align-items: center;
