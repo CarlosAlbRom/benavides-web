@@ -36,7 +36,7 @@ export class ColorTestComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.api.getColorsByType(1).subscribe(res => {
+    this.api.getColorsByType(2).subscribe(res => {
       this.colors = res.data;
       console.log(this.colors)
     })

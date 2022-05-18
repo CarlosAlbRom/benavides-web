@@ -83,7 +83,6 @@ export class DetailComponent implements OnInit {
 
   public addToCart(){
     let added = this.main.addToCart(this.article);
-    console.log(added)
     if (added) {
       this.alert.success(`${this.article.name} ha sido añadido a tu carrito de compras`)
     } else {

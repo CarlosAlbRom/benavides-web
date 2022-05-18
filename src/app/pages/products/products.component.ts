@@ -51,7 +51,7 @@ export class ProductsComponent implements OnInit {
     {
       categories: [],
       id: 7,
-      name: "Carpintería"
+      name: "Madera"
     },
   ]
 
